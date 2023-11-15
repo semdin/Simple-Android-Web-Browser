@@ -34,7 +34,6 @@ public class TabAdapter extends FragmentStateAdapter {
     public void addNewTab() {
         tabCount++;
         mainActivity.addTabTitle("Tab " + tabCount);
-        //notifyDataSetChanged();
     }
 
     // Remove tab and decrement tab count
