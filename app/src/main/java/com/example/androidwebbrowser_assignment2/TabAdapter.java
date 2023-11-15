@@ -7,6 +7,10 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import android.widget.Toast;
+
+
+
 import java.util.List;
 
 public class TabAdapter extends FragmentStateAdapter {
@@ -38,9 +42,13 @@ public class TabAdapter extends FragmentStateAdapter {
 
     // Remove tab and decrement tab count
     public void removeTab( int position) {
-        tabCount--;
-        mainActivity.removeTabTitle(position);
         //notifyDataSetChanged();
+        if(tabCount == 1){
+            Toast.makeText(mainActivity, "No more tabs", Toast.LENGTH_SHORT).show();
+        }else {
+            tabCount--;
+            mainActivity.removeTabTitle(position);
+        }
     }
 
 }
