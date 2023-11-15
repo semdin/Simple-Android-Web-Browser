@@ -37,4 +37,11 @@ public class TabAdapter extends FragmentStateAdapter {
         //notifyDataSetChanged();
     }
 
+    // Remove tab and decrement tab count
+    public void removeTab( int position) {
+        tabCount--;
+        mainActivity.removeTabTitle(position);
+        //notifyDataSetChanged();
+    }
+
 }

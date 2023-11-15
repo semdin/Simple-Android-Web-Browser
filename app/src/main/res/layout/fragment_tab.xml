@@ -42,6 +42,13 @@
             android:text="New Tab"
             android:layout_toRightOf="@id/goButton" />
 
+        <Button
+            android:id="@+id/closeTabButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close Tab"
+            android:layout_toRightOf="@id/newTabButton" />
+
     </LinearLayout>
 
     <TextView

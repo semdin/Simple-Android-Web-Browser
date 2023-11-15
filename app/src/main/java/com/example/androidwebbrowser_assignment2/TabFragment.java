@@ -65,7 +65,6 @@ public class TabFragment extends Fragment {
             mywebview.setWebViewClient(new WebViewClient() {
                 @Override
                 public void onPageFinished(WebView view, String url) {
-                    // Sayfa yüklendiğinde bu metot çağrılır
                     String title = mywebview.getTitle();
                     if (title == null || title.isEmpty()) {
                         title = "Empty Page";
@@ -91,6 +90,17 @@ public class TabFragment extends Fragment {
 
             InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(addressBar.getWindowToken(), 0);
+        });
+
+        Button closeTabButton = view.findViewById(R.id.closeTabButton);
+        closeTabButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Remove current tab and decrement tab count
+                if (getActivity() instanceof MainActivity) {
+                    ((MainActivity) getActivity()).tabAdapter.removeTab(tabNumber - 1);
+                }
+            }
         });
 
         return view;

@@ -73,4 +73,9 @@ public class MainActivity extends AppCompatActivity {
         tabAdapter.notifyDataSetChanged();
     }
 
+    public void removeTabTitle(int position) {
+        tabTitles.remove(position);
+        tabAdapter.notifyDataSetChanged();
+    }
+
 }
